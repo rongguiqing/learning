@@ -84,3 +84,8 @@
         - git merge branch_name
     - 删除分支
         - git branch -d branch_name
+# 7.解决冲突
+    - 两个分支有新的提交，将无法快速合并，必须手动解决后再提交
+    - git status也可以告诉我们冲突的文件，也可以直接查看文件内容（cat）
+    - 用带参数的git log可以查看分支的合并情况
+        - git log --graph --pretty=oneline --abbrev-commit
