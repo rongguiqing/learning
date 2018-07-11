@@ -89,3 +89,4 @@
     - git status也可以告诉我们冲突的文件，也可以直接查看文件内容（cat）
     - 用带参数的git log可以查看分支的合并情况
         - git log --graph --pretty=oneline --abbrev-commit
+
