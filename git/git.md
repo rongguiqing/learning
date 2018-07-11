@@ -1,0 +1,68 @@
+# 1.git简介
+    - 集中式VS分布式
+        - 集中式：svn、cvs
+            - 版本库集中存放在中央服务器
+            - 集中式版本控制系统的毛病是必须联网才能使用
+        - 分布式：git
+            - 分布式版本控制根本没有“中央服务器”
+            - 每个人的电脑上都有完整的版本库
+            - 工作的时候，不需要联网
+            - 分布式版本控制系统也有一台充当“中央服务器”的电脑，仅仅用来方便“交换”大家的修改
+# 2.git安装
+    - 下载地址：
+        - [git官网](https://git-scm.com/downloads)
+        - 安装成功后，在开始菜单找到“git->git Bash",蹦出一个类似命令行的窗口，就说明git安装成功
+    - git使用
+        - git是分布式版本控制，所以每个机器必须自报家门
+            - git config --global user.name "rongguiqing"
+            - git config --global user.email "ronggq1987@126.com"
+        - --global参数表示你这台机器所有的git仓库都使用这个配置
+
+# 3.git使用
+    - 将目录变成git仓库
+        - git init
+    - 把文件放到git仓库有2部
+        - git add readme.txt
+        - git commit -m "commit new"
+    - 查看状态
+        - git status
+    - 查看文件不同
+        - git diff HEAD -- readme.txt    #查看工作区和版本库里面最新版本的区别
+        - git diff readme.txt
+    - 查看日志
+        - git log
+        - git log --pretty=oneline   #每条日志一行，HEAD表示当前版本
+    - 回退版本
+        - git reset --hard HEAD^    #HEAD^表示上一个版本，HEAD^^表示上上个版本，HEAD~100表示上100个版本
+        - git reset --hard 1094a    #1094a为版号，可以切换到任何版笨
+    - 用来记录每一次命令
+        - git reflog
+    - 撤销修改
+        - git checkout -- readme.txt    #丢弃工作区的修改，不包含已经放入暂存区的东西
+        - git reset HEAD readme.txt     #可以把暂存区的修改回退到工作区
+    - 删除文件:分为两步
+        - git rm test.txt
+        - git commit -m "del test.txt"
+# 4.工作区和暂存区
+    - 工作区（Working Directory)
+    - 版本库（Repository)
+        - stage(或者index)暂存区
+        - 自动创建的第一个分支（master）
+        - 指向master的一个指针HEAD
+    - git add 命令把需要提交的内容放到暂存区
+    - git commit 一次性把暂存区的所有修改提交到分支
+# 5.远程仓库
+    - [GitHub](https://github.com/)
+    - 本地Git仓库和GitHub仓库传输是通过SHH加密的
+    - 设置
+        - 创建SSH Key：ssh-keygen -t -rsa -C "ronggq1987@126.com"
+            - .ssh目录
+                - id_rsa 私钥，不能泄露出去
+                - id_rsa.pub 公钥，可以放心告诉任何人
+        - 登录GitHub
+            - 打开“Account Setting”，“SSH KEY”页面
+            - ”Add SSH Key“，填上任意title，在Key文本框黏贴id_rsa.pub文件的内容
+        - 添加远程库
+            - 打开“Creat a new repo"按钮，创建一个新的仓库
+        - 远程库关联本地仓库
+            - 
