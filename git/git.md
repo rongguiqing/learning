@@ -65,4 +65,22 @@
         - 添加远程库
             - 打开“Creat a new repo"按钮，创建一个新的仓库
         - 远程库关联本地仓库
-            - 
+            - git remote origin git@github.com:rongguiqing/learning.git
+            - git push -u origin master  #远程仓库本来有文件需要先pull下来，-u第一次push时要加上，后面不用
+            - 第一次push或者clone时会有警告，需要确认Key的信息是否来自GitHub服务器
+        - 远程库克隆
+            - 最好是先建号远程库，然后从远程库克隆
+            - git clone git@github.com:rongguiqing/learning.git
+# 6.分支
+    - 查看分支
+        - git branch          #前面带*号的表示当前分支
+    - 创建分支
+        - git branch branch_name
+    - 切换分支
+        - git checkout branch_name
+    - 创建+切换分支
+        - git checkout -b branch_name    #相当于前面两个指令一起用
+    - 合并分支(把对应分支合到当前分支）
+        - git merge branch_name
+    - 删除分支
+        - git branch -d branch_name
