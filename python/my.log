@@ -1,0 +1,5 @@
+2018/07/20 12:18:50 - DEBUG - This is a debug log - E:/learning/python/practice03.py
+2018/07/20 12:18:50 - INFO - This is a info log - E:/learning/python/practice03.py
+2018/07/20 12:18:50 - WARNING - This is a warning log - E:/learning/python/practice03.py
+2018/07/20 12:18:50 - ERROR - This is a error log - E:/learning/python/practice03.py
+2018/07/20 12:18:50 - CRITICAL - This is a critical log - E:/learning/python/practice03.py
